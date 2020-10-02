@@ -16,6 +16,7 @@ import Home from "./components/Home"
 import CreatePost from "./components/CreatePost"
 import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
+import Profile from "./components/Profile"
 
 // context
 
@@ -30,7 +31,7 @@ function Main() {
     flashMessages: [],
     user: {
       token: localStorage.getItem("token"),
-      userName: localStorage.getItem("username"),
+      userName: localStorage.username,
       avatar: localStorage.getItem("avatar")
     }
   }
@@ -79,6 +80,9 @@ function Main() {
             </Route>
             <Route path="/about-us">
               <About />
+            </Route>
+            <Route path="/profile/:username">
+              <Profile />
             </Route>
             <Route path="/terms">
               <Terms />
