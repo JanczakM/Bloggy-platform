@@ -87,7 +87,7 @@ function Main() {
             <Route path="/terms">
               <Terms />
             </Route>
-            <Route path="/post/:id">
+            <Route path="/posts/:id">
               <ViewSinglePost />
             </Route>
           </Switch>
