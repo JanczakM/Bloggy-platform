@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Page from "./Page"
 import { useParams, Link } from "react-router-dom"
 import Axios from "axios"
+import LoadingDotsIcon from "./LoadingDotsIcon"
 
 function ViewSinglePost() {
   const [isLoading, setIsLoading] = useState(true)
@@ -21,7 +22,12 @@ function ViewSinglePost() {
     fetchPost()
   }, [])
 
-  if (isLoading) return <Page title="...">...Loading</Page>
+  if (isLoading)
+    return (
+      <Page title="...">
+        <LoadingDotsIcon />
+      </Page>
+    )
 
   const date = new Date(post.createdDate)
   const dateFormated = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
