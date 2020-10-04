@@ -17,6 +17,7 @@ import CreatePost from "./components/CreatePost"
 import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
 import Profile from "./components/Profile"
+import EditPost from "./components/EditPost"
 
 // context
 
@@ -78,6 +79,7 @@ function Main() {
             <Route path="/create-post">
               <CreatePost />
             </Route>
+
             <Route path="/about-us">
               <About />
             </Route>
@@ -87,8 +89,11 @@ function Main() {
             <Route path="/terms">
               <Terms />
             </Route>
-            <Route path="/posts/:id">
+            <Route path="/posts/:id" exact>
               <ViewSinglePost />
+            </Route>
+            <Route path="/posts/:id/edit">
+              <EditPost />
             </Route>
           </Switch>
           <Footer />
