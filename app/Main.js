@@ -18,6 +18,7 @@ import ViewSinglePost from "./components/ViewSinglePost"
 import FlashMessages from "./components/FlashMessages"
 import Profile from "./components/Profile"
 import EditPost from "./components/EditPost"
+import NotFound from "./components/NotFound"
 
 // context
 
@@ -94,6 +95,9 @@ function Main() {
             </Route>
             <Route path="/posts/:id/edit">
               <EditPost />
+            </Route>
+            <Route>
+              <NotFound />
             </Route>
           </Switch>
           <Footer />
