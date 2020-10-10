@@ -17,7 +17,7 @@ function CreatePost(props) {
       const response = await Axios.post("/create-post", { title, body, token: appState.user.token })
       // redirect to new post url
       appDispatch({ type: "flashMessage", value: "You have created a post" })
-      props.history.push(`/post/${response.data}`)
+      props.history.push(`/posts/${response.data}`)
       console.log("new post was created")
     } catch (e) {
       console.log("there was a problem")
