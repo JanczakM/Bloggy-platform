@@ -13,8 +13,10 @@ function HeaderLoggedOut(props) {
       const response = await Axios.post("/login", { username, password })
       if (response.data) {
         appDispatch({ type: "login", data: response.data })
+        appDispatch({ type: "flashMessage", value: "You have successfully logged in" })
       } else {
         console.log("incorrect password")
+        appDispatch({ type: "flashMessage", value: "Invalid password!" })
       }
     } catch (e) {
       console.log(e.response.data)
@@ -31,7 +33,7 @@ function HeaderLoggedOut(props) {
           <input onChange={e => setPassword(e.target.value)} name="password" className="form-control form-control-sm input-dark" type="password" placeholder="Password" />
         </div>
         <div className="col-md-auto">
-          <button className="btn btn-success btn-sm">Sign In</button>
+          <button className="btn btn-success btn-sm">Login</button>
         </div>
       </div>
     </form>

@@ -10,6 +10,7 @@ function HeaderLoggedIn(props) {
 
   function handleLogout() {
     appDispatch({ type: "logout" })
+    appDispatch({ type: "flashMessage", value: "You have successfully logged out" })
   }
 
   function handleSearch(e) {
@@ -36,7 +37,7 @@ function HeaderLoggedIn(props) {
         Create Post
       </Link>{" "}
       <button className="btn btn-sm btn-secondary" onClick={handleLogout}>
-        Sign Out
+        Log Out
       </button>
     </div>
   )

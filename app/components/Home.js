@@ -49,7 +49,7 @@ function Home() {
           </div>
         </>
       )}
-      {state.feed.lenght == 0 && (
+      {state.feed.length == 0 && (
         <>
           <h2 className="text-center">
             Hello <strong>{appState.user.username}</strong>, your feed is empty.
